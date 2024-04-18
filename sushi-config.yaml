@@ -4,12 +4,12 @@
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: tewhatuora.fhir.auditevents
-canonical: https://build.fhir.org/ig/tewhatuora/fhir-auditevents.fhir.ig
+canonical: https://build.fhir.org/ig/tewhatuora/fhir-auditevents
 name: Te Whatu Ora FHIR Audit Events Implementation Guide
 title: Te Whatu Ora FHIR Audit Events Implementation Guide
 description: Te Whatu Ora FHIR Audit Events Implementation Guide
-status: active
-version: 0.0.0
+status: draft
+version: 0.0.1
 fhirVersion: 4.0.1
 copyrightYear: 2024+
 releaseLabel: release # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
@@ -66,7 +66,7 @@ parameters:
   default-version: true
   suppressed-ids: $examples
   display-warnings: true
-#   excludettl: true
+  excludettl: true
 #   validation: [allow-any-extensions, no-broken-links]
 #
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
@@ -79,9 +79,8 @@ parameters:
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
   Home: index.html
-  Business view: businessview.html
-  Onboarding: onboarding.html
-  Use cases: usecases.html
+  Security: security.html
+  API: CapabilityStatement-HiraCapabilityStatement.html
   Artifacts: artifacts.html
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
