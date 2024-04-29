@@ -1,6 +1,6 @@
 Instance: HiraAuditEventExampleUC3
 InstanceOf: HiraAuditEvent
-Title: "Example Hira Audit Event for UC3: Member of the public accesses another member of the public (patient’s) health "
+Title: "Example Hira Audit Event for UC3: Member of the public accesses another member of the public (patient’s) health"
 Usage: #example
 
 * type = http://terminology.hl7.org/CodeSystem/audit-event-type#rest
@@ -19,7 +19,7 @@ Usage: #example
 
 // agent[agt]
 // member of public with delegated access
-* agent[+].type.coding[+].system = "http://terminology.hl7.org/CodeSystem/v3-RoleClass"
+* agent[+].type.coding[+].system = "http://terminology.hl7.org/CodeSystem/v3-RoleCode"
 * agent[=].type.coding[=].code = #DELEGATEE
 * agent[=].type.coding[=].display = "delegatee"
 * agent[=].who.reference = "https://api.hip.digital.health.nz/fhir/Patient/{delegateNHI}"
@@ -28,7 +28,7 @@ Usage: #example
 * agent[=].network.address = "12.21.213.213"
 
 // agent [sys]
-* agent[+].type.coding[+].system = "http://terminology.hl7.org/CodeSystem/v3-RoleClass"
+* agent[+].type.coding[+].system = "http://terminology.hl7.org/CodeSystem/extra-security-role-type"
 * agent[=].type.coding[=].code = #dataprocessor
 * agent[=].type.coding[=].display = "dataprocessor"
 * agent[=].who.display = "My Health Record"

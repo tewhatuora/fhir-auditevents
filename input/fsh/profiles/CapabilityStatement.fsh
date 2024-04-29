@@ -8,6 +8,7 @@ Usage: #definition
 * fhirVersion = #4.0.1
 * format = #json
 * implementation.description = "Audit Events API"
+* implementation.url = "https://auditevents.digital.health.nz/fhir/R4"
 * implementationGuide = "https://build.fhir.org/ig/tewhatuora/fhir-auditevents"
 * publisher = "Te Whatu Ora Health New Zealand"
 * description = "FHIR API for AuditEvents"
@@ -17,6 +18,9 @@ Usage: #definition
 * rest.security.description = "Details security requirements are detailed at [security](./security.html)."
 * rest.security.cors = false
 * rest.security.service[0].coding = http://terminology.hl7.org/CodeSystem/restful-security-service#OAuth
+
+* rest.interaction[+].code = #transaction
+* rest.interaction[+].code = #batch
 
 * rest.resource[+].type = #AuditEvent
 * rest.resource[=].interaction[0].code = #read

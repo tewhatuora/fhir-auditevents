@@ -12,3 +12,9 @@
 
 ## Getting Started
 
+Build the IG locally:
+
+```bash
+bash _updatePublisher.sh
+bash _genonce.sh
+```

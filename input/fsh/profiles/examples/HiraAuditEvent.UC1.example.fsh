@@ -19,7 +19,7 @@ Usage: #example
 * agent[=].network.address = "12.21.213.213"
 
 // agent [sys]
-* agent[+].type.coding[+].system = "http://terminology.hl7.org/CodeSystem/v3-RoleClass"
+* agent[+].type.coding[+].system = "http://terminology.hl7.org/CodeSystem/extra-security-role-type"
 * agent[=].type.coding[=].code = #dataprocessor
 * agent[=].type.coding[=].display = "dataprocessor"
 * agent[=].who.display = "My Health Record"
