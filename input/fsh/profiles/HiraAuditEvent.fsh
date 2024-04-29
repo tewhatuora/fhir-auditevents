@@ -7,9 +7,9 @@ Description: "Constrains the AuditEvent resource to represent Data Access throug
 * ^purpose = "Capture of Data Access through the Hira Connector Plane"
 
 * type = http://terminology.hl7.org/CodeSystem/audit-event-type#rest
-* subtype 0..0
 * action 1..1
 * recorded 1..1
 * outcome 1..1
-* outcomeDesc 0..0
+* outcomeDesc 1..1
 
+* source.observer.display 1..1
