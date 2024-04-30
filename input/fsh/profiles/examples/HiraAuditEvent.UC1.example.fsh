@@ -15,7 +15,6 @@ Usage: #example
 * agent[=].type.coding[=].display = "patient"
 * agent[=].who.reference = "https://api.hip.digital.health.nz/fhir/Patient/ZXP7823"
 * agent[=].requestor = true
-* agent[=].name = "Ms. Jane Doe"
 * agent[=].network.address = "12.21.213.213"
 
 // agent [sys]

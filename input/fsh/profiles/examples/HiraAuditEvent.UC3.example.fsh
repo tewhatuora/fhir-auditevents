@@ -14,7 +14,7 @@ Usage: #example
 * agent[+].type.coding[+].system = "http://terminology.hl7.org/CodeSystem/v3-RoleClass"
 * agent[=].type.coding[=].code = #PAT
 * agent[=].type.coding[=].display = "patient"
-* agent[=].who.reference = "https://api.hip.digital.health.nz/fhir/Patient/{childNHI}"
+* agent[=].who.reference = "https://api.hip.digital.health.nz/fhir/Patient/{patientNHI}"
 * agent[=].requestor = false
 
 // agent[agt]
@@ -24,7 +24,6 @@ Usage: #example
 * agent[=].type.coding[=].display = "delegatee"
 * agent[=].who.reference = "https://api.hip.digital.health.nz/fhir/Patient/{delegateNHI}"
 * agent[=].requestor = true
-* agent[=].name = "Delegates Name"
 * agent[=].network.address = "12.21.213.213"
 
 // agent [sys]

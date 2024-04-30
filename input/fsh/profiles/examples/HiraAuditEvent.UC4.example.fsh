@@ -14,17 +14,16 @@ Usage: #example
 * agent[+].type.coding[+].system = "http://terminology.hl7.org/CodeSystem/v3-RoleClass"
 * agent[=].type.coding[=].code = #PAT
 * agent[=].type.coding[=].display = "patient"
-* agent[=].who.reference = "https://api.hip.digital.health.nz/fhir/Patient/{childNHI}"
+* agent[=].who.reference = "https://api.hip.digital.health.nz/fhir/Patient/{patientNHI}"
 * agent[=].requestor = false
 
 // agent[hwf]
 // health workforce member
 * agent[+].type.coding[+].system = "http://terminology.hl7.org/CodeSystem/v3-RoleCode"
-* agent[=].type.coding[=].code = #DELEGATEE
-* agent[=].type.coding[=].display = "delegatee"
+* agent[=].type.coding[=].code = #PROV
+* agent[=].type.coding[=].display = "healthcare provider"
 * agent[=].who.reference = "https://api.hip.digital.health.nz/fhir/Practitoner/{practitionerId}"
 * agent[=].requestor = true
-* agent[=].name = "Dr Practitioner"
 * agent[=].network.address = "12.21.213.213"
 
 // agent [sys]
