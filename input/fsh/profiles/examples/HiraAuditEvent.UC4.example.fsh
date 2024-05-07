@@ -22,7 +22,9 @@ Usage: #example
 * agent[+].type.coding[+].system = "http://terminology.hl7.org/CodeSystem/v3-RoleCode"
 * agent[=].type.coding[=].code = #PROV
 * agent[=].type.coding[=].display = "healthcare provider"
-* agent[=].who.reference = "https://api.hip.digital.health.nz/fhir/Practitoner/{practitionerId}"
+* agent[=].who.reference = "https://api.hip.digital.health.nz/fhir/Practitioner/{HPI_ID}"
+* agent[=].altId = "externalSystemId"
+* agent[=].location.display = "Waikato Hospital"
 * agent[=].requestor = true
 * agent[=].network.address = "12.21.213.213"
 
@@ -30,7 +32,7 @@ Usage: #example
 * agent[+].type.coding[+].system = "http://terminology.hl7.org/CodeSystem/extra-security-role-type"
 * agent[=].type.coding[=].code = #dataprocessor
 * agent[=].type.coding[=].display = "dataprocessor"
-* agent[=].who.display = "My Health Record"
+* agent[=].who.display = "client_id123"
 * agent[=].requestor = false
 * agent[=].name = "My Health Record"
 * agent[=].network.address = "88.11.333.213"

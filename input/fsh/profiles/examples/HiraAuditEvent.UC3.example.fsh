@@ -24,13 +24,14 @@ Usage: #example
 * agent[=].type.coding[=].display = "delegatee"
 * agent[=].who.reference = "https://api.hip.digital.health.nz/fhir/Patient/{delegateNHI}"
 * agent[=].requestor = true
+* agent[=].altId = "73a35fec-6d01-4148-832f-f5389f9fd0fa"
 * agent[=].network.address = "12.21.213.213"
 
 // agent [sys]
 * agent[+].type.coding[+].system = "http://terminology.hl7.org/CodeSystem/extra-security-role-type"
 * agent[=].type.coding[=].code = #dataprocessor
 * agent[=].type.coding[=].display = "dataprocessor"
-* agent[=].who.display = "My Health Record"
+* agent[=].who.display = "client_id123"
 * agent[=].requestor = false
 * agent[=].name = "My Health Record"
 * agent[=].network.address = "88.11.333.213"

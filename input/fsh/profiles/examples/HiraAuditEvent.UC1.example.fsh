@@ -21,7 +21,7 @@ Usage: #example
 * agent[+].type.coding[+].system = "http://terminology.hl7.org/CodeSystem/extra-security-role-type"
 * agent[=].type.coding[=].code = #dataprocessor
 * agent[=].type.coding[=].display = "dataprocessor"
-* agent[=].who.display = "My Health Record"
+* agent[=].who.display = "client_id123"
 * agent[=].requestor = false
 * agent[=].name = "My Health Record"
 * agent[=].network.address = "88.11.333.213"

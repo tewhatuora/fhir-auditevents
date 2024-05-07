@@ -24,6 +24,7 @@ Usage: #example
 * agent[=].type.coding[=].display = "caregiver"
 * agent[=].who.reference = "https://api.hip.digital.health.nz/fhir/Patient/{parentNHI}"
 * agent[=].requestor = true
+* agent[=].altId = "56237238-0a38-4ae3-b148-1e6d7a9b9d07"
 * agent[=].network.address = "12.21.213.213"
 
 // agent [sys]
@@ -31,7 +32,7 @@ Usage: #example
 * agent[+].type.coding[+].system = "http://terminology.hl7.org/CodeSystem/extra-security-role-type"
 * agent[=].type.coding[=].code = #dataprocessor
 * agent[=].type.coding[=].display = "dataprocessor"
-* agent[=].who.display = "My Health Record"
+* agent[=].who.display = "client_id123"
 * agent[=].requestor = false
 * agent[=].name = "My Health Record"
 * agent[=].network.address = "88.11.333.213"
