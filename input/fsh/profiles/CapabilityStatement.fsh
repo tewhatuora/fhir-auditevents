@@ -23,6 +23,8 @@ Usage: #definition
 * rest.interaction[+].code = #batch
 
 * rest.resource[+].type = #AuditEvent
+* rest.resource[=].profile = Canonical(AuditEvent)
+* rest.resource[=].supportedProfile = Canonical(HiraAuditEvent)
 * rest.resource[=].interaction[0].code = #read
 * rest.resource[=].interaction[+].code = #search-type
 * rest.resource[=].interaction[+].code = #create
