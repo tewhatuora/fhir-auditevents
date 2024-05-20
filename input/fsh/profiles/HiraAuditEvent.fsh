@@ -19,29 +19,53 @@ Description: "Constrains the AuditEvent resource to represent Data Access throug
 * agent ^slicing.discriminator.path = "role"
 * agent ^slicing.rules = #open
 
+/* Start Agents - These are the people and systems involed in the data access event */
 * agent contains
-  patient 1..1 and
+  patient 0..1 and
   caregiver 0..1 and
   delegatee 0..1 and
   healthworkforce 0..1 and
   system 0..1
 
-* agent[patient].role = https://hl7.org/fhir/R4/v3/RoleClass/cs.html#patient
+* agent[patient].role = https://terminology.hl7.org/CodeSystem/v3-RoleClass#patient
 * agent[patient].role 1..1
-* agent[caregiver].role = https://hl7.org/fhir/R4/v3/RoleClass/cs.html#caregiver
+* agent[patient].name 0..0
+* agent[caregiver].role = https://terminology.hl7.org/CodeSystem/v3-RoleClass#caregiver
 * agent[caregiver].role 1..1
-* agent[delegatee].role = https://hl7.org/fhir/R4/v3/RoleClass/cs.html#delegatee
+* agent[caregiver].name 0..0
+* agent[delegatee].role = https://terminology.hl7.org/CodeSystem/v3-RoleClass#delegatee
 * agent[delegatee].role 1..1
-* agent[healthworkforce].role = https://hl7.org/fhir/R4/v3/RoleClass/cs.html#healthworkforce
+* agent[delegatee].name 0..0
+* agent[healthworkforce].role = https://terminology.hl7.org/CodeSystem/v3-RoleClass#healthworkforce
 * agent[healthworkforce].role 1..1
-* agent[system].role = https://hl7.org/fhir/R4/v3/RoleClass/cs.html#system
+* agent[healthworkforce].name 0..0
+* agent[system].role = https://terminology.hl7.org/CodeSystem/v3-RoleClass#system
 * agent[system].role 1..1
+/* End Agents */
 
-* agent[patient] ^short = "The Patient who is the subject of the data access"
+* agent[patient] ^short = "The Patient who is logged in and accessing their own records"
 * agent[caregiver] ^short = "The Caregiver accessing a child's records"
 * agent[delegatee] ^short = "A Delegate accessing a patient's records on their behalf"
-* agent[healthworkforce] ^short = "A member of the Health Workforce accessing a patient's records"
+* agent[healthworkforce] ^short = "A member of the Health Workforce accessing patient records"
 * agent[system] ^short = "A system accessing Patient records"
 
+/* Start Entities - This is the data entity accessed (e.g. the resource) and a subject within the data */
 * entity 1..*
 * entity ^short = "Details of the endpoints being accessed"
+
+* entity ^slicing.discriminator.type = #value
+* entity ^slicing.discriminator.path = "type"
+* entity ^slicing.rules = #open
+
+* entity contains
+    accessedResource 1..1 and
+    dataSubject 0..*
+
+* entity[accessedResource].type = https://terminology.hl7.org/CodeSystem/audit-entity-type#2
+* entity[accessedResource].type 1..1
+* entity[accessedResource] ^short = "The REST or FHIR resource that is being accessed"
+
+* entity[dataSubject].type = https://terminology.hl7.org/CodeSystem/audit-entity-type#1
+* entity[dataSubject].type 1..1
+* entity[dataSubject] ^short = "The data subject of the accessed resource, derived from the resource itself"
+/* End entities */

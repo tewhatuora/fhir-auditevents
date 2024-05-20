@@ -9,35 +9,14 @@ Usage: #example
 * outcome = http://hl7.org/fhir/audit-event-outcome#0
 * outcomeDesc = "200"
 
-// Patient self agent[own]
-// patient whom record belongs to
-* agent[+].type.coding[+].system = "http://terminology.hl7.org/CodeSystem/v3-RoleClass"
-* agent[=].type.coding[=].code = #PAT
-* agent[=].type.coding[=].display = "patient"
-* agent[=].who.reference = "https://api.hip.digital.health.nz/fhir/Patient/{patientNHI}"
-* agent[=].requestor = false
-
 // agent[hwf]
 // health workforce member
-* agent[+].type.coding[+].system = "http://terminology.hl7.org/CodeSystem/v3-RoleCode"
-* agent[=].type.coding[=].code = #PROV
-* agent[=].type.coding[=].display = "healthcare provider"
-* agent[=].who.reference = "https://api.hip.digital.health.nz/fhir/Practitioner/{HPI_ID}"
-* agent[=].altId = "externalSystemId"
-* agent[=].location.display = "Waikato Hospital"
-* agent[=].requestor = true
-* agent[=].network.address = "12.21.213.213"
+* agent[healthworkforce] insert HealthWorkforceAgent
 
 // agent [sys]
-* agent[+].type.coding[+].system = "http://terminology.hl7.org/CodeSystem/extra-security-role-type"
-* agent[=].type.coding[=].code = #dataprocessor
-* agent[=].type.coding[=].display = "dataprocessor"
-* agent[=].who.display = "client_id123"
-* agent[=].requestor = false
-* agent[=].name = "My Health Record"
-* agent[=].network.address = "88.11.333.213"
+* agent[system] insert SystemAgent
 
 * source.observer.display = "Hira Connector Plane HNZ"
 
-* entity[+].what.reference = "https://fhir.digital.health.nz/fhir/R4/CarePlan"
-* entity[=].query = "P3BhdGllbnQ9MTIzNA=="
+* entity[accessedResource] insert AccessedResourceAgent(https://fhir.digital.health.nz/fhir/R4/CarePlan, P3BhdGllbnQ9MTIzNA==)
+* entity[dataSubject] insert DataSubjectAgent(https://api.hip.digital.health.nz/fhir/Patient/NHI123)
