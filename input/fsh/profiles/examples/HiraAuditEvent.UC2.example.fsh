@@ -17,7 +17,7 @@ Usage: #example
 // software system
 * agent[system] insert SystemAgent
 
-* source.observer.display = "Hira Connector Plane HNZ"
+* source.observer.display = "Hira Mulesoft Gateway"
 
-* entity[accessedResource] insert AccessedResourceAgent(https://fhir.digital.health.nz/fhir/R4/CarePlan, P3BhdGllbnQ9MTIzNA==)
+* entity[accessedResource] insert AccessedResourceAgent(https://fhir.digital.health.nz/fhir/R4/CarePlan, P3BhdGllbnQ9MTIzNA==, Reading CarePlan)
 * entity[dataSubject] insert DataSubjectAgent(https://api.hip.digital.health.nz/fhir/Patient/NHI123)
