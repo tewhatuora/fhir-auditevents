@@ -9,7 +9,7 @@ Usage: #example
 * outcome = http://hl7.org/fhir/audit-event-outcome#0
 * outcomeDesc = "200"
 
-// agent[agt]
+* agent[dlg] insert PatientDelegateAgent
 // member of public with delegated access
 * agent[delegatee] insert DelegateeAgent
 

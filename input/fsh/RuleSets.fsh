@@ -1,5 +1,11 @@
-RuleSet: PatientAgent
+RuleSet: SlfAgent
 * role.coding = http://terminology.hl7.org/CodeSystem/v3-RoleClass#PAT
+* who.reference = "https://api.hip.digital.health.nz/fhir/Patient/NHI123"
+* requestor = true
+* altId = "56237238-0a38-4ae3-b148-1e6d7a9b9d07"
+
+RuleSet: PatientDelegateAgent
+* role.coding = http://terminology.hl7.org/CodeSystem/v3-RoleClass#DELEGATE
 * who.reference = "https://api.hip.digital.health.nz/fhir/Patient/NHI123"
 * requestor = false
 * altId = "56237238-0a38-4ae3-b148-1e6d7a9b9d07"

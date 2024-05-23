@@ -10,7 +10,7 @@ Usage: #example
 * outcomeDesc = "200"
 
 // Patient self agent[slf]
-* agent[patient] insert PatientAgent
+* agent[slf] insert SlfAgent
 
 // agent [sys]
 * agent[system] insert SystemAgent
