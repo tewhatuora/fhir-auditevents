@@ -32,23 +32,23 @@ Description: "Constrains the AuditEvent resource to represent Data Access throug
 * agent[slf].role 1..1
 * agent[slf].name 0..0
 
-* agent[dlg].role = https://terminology.hl7.org/CodeSystem/v3-RoleClass#delegate
+* agent[dlg].role = https://terminology.hl7.org/CodeSystem/v3-RoleCode#DELEGATOR
 * agent[dlg].role 1..1
 * agent[dlg].name 0..0
 
-* agent[caregiver].role = https://terminology.hl7.org/CodeSystem/v3-RoleClass#caregiver
+* agent[caregiver].role = http://terminology.hl7.org/CodeSystem/v3-ParticipationFunction#AUCG
 * agent[caregiver].role 1..1
 * agent[caregiver].name 0..0
 
-* agent[delegatee].role = https://terminology.hl7.org/CodeSystem/v3-RoleClass#delegatee
+* agent[delegatee].role = https://terminology.hl7.org/CodeSystem/v3-RoleCode#DELEGATEE
 * agent[delegatee].role 1..1
 * agent[delegatee].name 0..0
 
-* agent[healthworkforce].role = https://terminology.hl7.org/CodeSystem/v3-RoleClass#healthworkforce
+* agent[healthworkforce].role = https://terminology.hl7.org/CodeSystem/v3-RoleClass#PROV
 * agent[healthworkforce].role 1..1
 * agent[healthworkforce].name 0..0
 
-* agent[system].role = https://terminology.hl7.org/CodeSystem/v3-RoleClass#system
+* agent[system].role = http://terminology.hl7.org/CodeSystem/extra-security-role-type#dataprocessor
 * agent[system].role 1..1
 /* End Agents */
 
