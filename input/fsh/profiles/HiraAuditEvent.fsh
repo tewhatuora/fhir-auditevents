@@ -71,11 +71,11 @@ Description: "Constrains the AuditEvent resource to represent Data Access throug
     accessedResource 1..1 and
     dataSubject 0..*
 
-* entity[accessedResource].type = https://terminology.hl7.org/CodeSystem/audit-entity-type#2
-* entity[accessedResource].type 1..1
+* entity[accessedResource].role = https://terminology.hl7.org/CodeSystem/audit-entity-type#2
+* entity[accessedResource].role 1..1
 * entity[accessedResource] ^short = "The REST or FHIR resource that is being accessed"
 
-* entity[dataSubject].type = https://terminology.hl7.org/CodeSystem/audit-entity-type#1
-* entity[dataSubject].type 1..1
+* entity[dataSubject].role = https://terminology.hl7.org/CodeSystem/audit-entity-type#1
+* entity[dataSubject].role 1..1
 * entity[dataSubject] ^short = "The data subject of the accessed resource, derived from the resource itself"
 /* End entities */
