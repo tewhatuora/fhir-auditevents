@@ -9,6 +9,8 @@ Usage: #example
 * outcome = http://hl7.org/fhir/audit-event-outcome#0
 * outcomeDesc = "200"
 
+* purposeOfEvent = http://terminology.hl7.org/CodeSystem/v3-ActReason#PUBHLTH
+
 * agent[dlg] insert PatientDelegatorAgent
 // health workforce member
 * agent[healthworkforce] insert HealthWorkforceAgent

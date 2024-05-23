@@ -9,6 +9,8 @@ Usage: #example
 * outcome = http://hl7.org/fhir/audit-event-outcome#8
 * outcomeDesc = "500"
 
+* purposeOfEvent = http://terminology.hl7.org/CodeSystem/v3-ActReason#PATRQT
+
 // Patient self agent[slf]
 * agent[slf] insert SlfAgent
 
