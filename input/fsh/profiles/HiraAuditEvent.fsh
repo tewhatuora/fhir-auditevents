@@ -46,7 +46,7 @@ Description: "Constrains the AuditEvent resource to represent Data Access throug
 
 * agent[healthworkforce].role = https://terminology.hl7.org/CodeSystem/v3-RoleClass#PROV
 * agent[healthworkforce].role 1..1
-* agent[healthworkforce].name 0..0
+* agent[healthworkforce].extension contains HeatlhCareAgentDetailsExtension named healthcareDetails 0..1
 
 * agent[system].role = http://terminology.hl7.org/CodeSystem/extra-security-role-type#dataprocessor
 * agent[system].role 1..1
