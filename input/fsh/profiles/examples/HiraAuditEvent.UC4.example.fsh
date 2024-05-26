@@ -11,7 +11,6 @@ Usage: #example
 
 * purposeOfEvent = http://terminology.hl7.org/CodeSystem/v3-ActReason#PUBHLTH
 
-* agent[dlg] insert PatientDelegatorAgent
 // health workforce member
 * agent[healthworkforce] insert HealthWorkforceAgent
 
