@@ -3,6 +3,7 @@ RuleSet: SlfAgent
 * who.reference = "https://api.hip.digital.health.nz/fhir/Patient/NHI123"
 * requestor = true
 * altId = "56237238-0a38-4ae3-b148-1e6d7a9b9d07"
+* network.address = "22.21.213.352"
 
 RuleSet: PatientDelegatorAgent
 * role.coding = http://terminology.hl7.org/CodeSystem/v3-RoleCode#DELEGATOR
@@ -65,3 +66,10 @@ RuleSet: AccessedResourceAgent(what, query, description)
 * query = "{query}"
 * detail[+].type = "correlationId"
 * detail[=].valueString = "c500dae6-ac65-4e4f-a4c1-5aa222a6a807"
+
+RuleSet: AccessedResourceAgentSearch(what, description, body)
+* role = https://terminology.hl7.org/CodeSystem/audit-entity-type#2
+* what.reference = "{what}"
+* description = "{description}"
+* detail[+].type = "searchRequestBody"
+* detail[=].valueString = "{body}"
