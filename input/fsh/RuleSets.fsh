@@ -58,6 +58,8 @@ RuleSet: AccessedResourceAgentWithError(what, query, description, error)
 * description = "{description}"
 * detail[+].type = "errorBody"
 * detail[=].valueString = "{error}"
+* detail[+].type = "correlationId"
+* detail[=].valueString = "c500dae6-ac65-4e4f-a4c1-5aa222a6a807"
 
 RuleSet: AccessedResourceAgent(what, query, description)
 * role = https://terminology.hl7.org/CodeSystem/audit-entity-type#2
@@ -73,3 +75,5 @@ RuleSet: AccessedResourceAgentSearch(what, description, body)
 * description = "{description}"
 * detail[+].type = "searchRequestBody"
 * detail[=].valueString = "{body}"
+* detail[+].type = "correlationId"
+* detail[=].valueString = "c500dae6-ac65-4e4f-a4c1-5aa222a6a807"
