@@ -14,6 +14,7 @@ Usage: #example
 * agent[dlg] insert PatientDelegatorAgent
 // member of public with delegated access
 * agent[delegatee] insert DelegateeAgent
+* agent[delegatee].policy = "1c7739fb-5099-4db9-a1f9-c928ee059640"
 
 // agent [sys]
 * agent[system] insert SystemAgent

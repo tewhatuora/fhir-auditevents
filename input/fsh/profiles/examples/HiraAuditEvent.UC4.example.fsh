@@ -13,6 +13,7 @@ Usage: #example
 
 // health workforce member
 * agent[healthworkforce] insert HealthWorkforceAgent
+* agent[healthworkforce].policy = "1c7739fb-5099-4db9-a1f9-c928ee059640"
 
 // agent [sys]
 * agent[system] insert SystemAgent
