@@ -26,7 +26,9 @@ Description: "Constrains the AuditEvent resource to represent Data Access throug
   caregiver 0..1 and
   delegatee 0..1 and
   healthworkforce 0..1 and
-  system 0..1
+  system 0..1 and
+  facility 0..1 and
+  organisation 0..1
 
 * agent[slf].role = https://terminology.hl7.org/CodeSystem/v3-RoleClass#patient
 * agent[slf].role 1..1
@@ -46,7 +48,7 @@ Description: "Constrains the AuditEvent resource to represent Data Access throug
 
 * agent[healthworkforce].role = https://terminology.hl7.org/CodeSystem/v3-RoleClass#PROV
 * agent[healthworkforce].role 1..1
-* agent[healthworkforce].extension contains HeatlhCareAgentDetailsExtension named healthcareDetails 0..1
+// * agent[healthworkforce].extension contains HeatlhCareAgentDetailsExtension named healthcareDetails 0..1
 
 * agent[system].role = http://terminology.hl7.org/CodeSystem/extra-security-role-type#dataprocessor
 * agent[system].role 1..1
@@ -58,6 +60,8 @@ Description: "Constrains the AuditEvent resource to represent Data Access throug
 * agent[delegatee] ^short = "A Delegate accessing a patient's records on their behalf"
 * agent[healthworkforce] ^short = "A member of the Health Workforce accessing patient records"
 * agent[system] ^short = "A system accessing Patient records"
+* agent[facility] ^short = "The facility accessing Patient records"
+* agent[organisation] ^short = "The organisation accessing Patient records"
 
 /* Start Entities - This is the data entity accessed (e.g. the resource) and a subject within the data */
 * entity 1..*

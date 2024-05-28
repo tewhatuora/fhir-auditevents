@@ -27,18 +27,29 @@ RuleSet: DelegateeAgent
 
 RuleSet: HealthWorkforceAgent
 * role.coding = http://terminology.hl7.org/CodeSystem/v3-RoleCode#PROV
-* who.reference = "https://api.hip.digital.health.nz/fhir/Practitioner/HPI123"
+* who.identifier.system = "https://standards.digital.health.nz/ns/hpi-person-id"
+* who.identifier.value = "cpn-123"
 * altId = "externalSystemId"
 * name = "John Doe"
 * location.display = "Te Whatu Ora, Christchurch Hospital Radiology Department"
 * requestor = true
 * network.address = "12.21.213.213"
-* extension[healthcareDetails].extension[CPN].valueIdentifier.system = "https://standards.digital.health.nz/ns/hpi-person-id"
-* extension[healthcareDetails].extension[CPN].valueIdentifier.value = "cpn-123"
-* extension[healthcareDetails].extension[OrgIdentifier].valueIdentifier.system = "https://standards.digital.health.nz/ns/hpi-organisation-id"
-* extension[healthcareDetails].extension[OrgIdentifier].valueIdentifier.value = "org-123"
-* extension[healthcareDetails].extension[FacilityIdentifier].valueIdentifier.system = "https://standards.digital.health.nz/ns/hpi-facility-id"
-* extension[healthcareDetails].extension[FacilityIdentifier].valueIdentifier.value = "fac-123"
+// * extension[healthcareDetails].extension[CPN].valueIdentifier.system = "https://standards.digital.health.nz/ns/hpi-person-id"
+// * extension[healthcareDetails].extension[CPN].valueIdentifier.value = "cpn-123"
+// * extension[healthcareDetails].extension[OrgIdentifier].valueIdentifier.system = "https://standards.digital.health.nz/ns/hpi-organisation-id"
+// * extension[healthcareDetails].extension[OrgIdentifier].valueIdentifier.value = "org-123"
+// * extension[healthcareDetails].extension[FacilityIdentifier].valueIdentifier.system = "https://standards.digital.health.nz/ns/hpi-facility-id"
+// * extension[healthcareDetails].extension[FacilityIdentifier].valueIdentifier.value = "fac-123"
+
+RuleSet: FacilityAgent
+* who.identifier.system = "https://standards.digital.health.nz/ns/hpi-facility-id"
+* who.identifier.value = "fac-123"
+* requestor = false
+
+RuleSet: OrganisationAgent
+* who.identifier.system = "https://standards.digital.health.nz/ns/hpi-organisation-id"
+* who.identifier.value = "org-123"
+* requestor = false
 
 RuleSet: SystemAgent
 * role.coding = http://terminology.hl7.org/CodeSystem/extra-security-role-type#dataprocessor
