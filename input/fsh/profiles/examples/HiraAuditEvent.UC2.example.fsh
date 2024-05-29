@@ -14,7 +14,7 @@ Usage: #example
 * agent[dlg] insert PatientDelegatorAgent
 // parent accessing record
 * agent[caregiver] insert CaregiverAgent
-* agent[caregiver].policy = "1c7739fb-5099-4db9-a1f9-c928ee059640"
+* agent[caregiver].policy = "urn:uuid:1c7739fb-5099-4db9-a1f9-c928ee059640"
 
 // agent [sys]
 // software system

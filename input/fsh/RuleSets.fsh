@@ -34,7 +34,6 @@ RuleSet: HealthWorkforceAgent
 * who.identifier.value = "cpn-123"
 * altId = "externalSystemId"
 * name = "John Doe"
-* location.display = "Te Whatu Ora, Christchurch Hospital Radiology Department"
 * requestor = true
 * extension[additionalAgentDetails].extension[mha-confidence-level].valueString = "3N"
 * network.address = "12.21.213.213"
