@@ -2,6 +2,7 @@ RuleSet: SlfAgent
 * role.coding = http://terminology.hl7.org/CodeSystem/v3-RoleClass#PAT
 * who.reference = "https://api.hip.digital.health.nz/fhir/Patient/NHI123"
 * requestor = true
+* extension[additionalAgentDetails].extension[mha-confidence-level].valueString = "3N"
 * altId = "56237238-0a38-4ae3-b148-1e6d7a9b9d07"
 * network.address = "22.21.213.352"
 
@@ -15,6 +16,7 @@ RuleSet: CaregiverAgent
 * role.coding = http://terminology.hl7.org/CodeSystem/v3-RoleClass#CAREGIVER
 * who.reference = "https://api.hip.digital.health.nz/fhir/Patient/NHI456"
 * requestor = true
+* extension[additionalAgentDetails].extension[mha-confidence-level].valueString = "3N"
 * altId = "56237238-0a38-4ae3-b148-1e6d7a9b9d07"
 * network.address = "12.21.213.213"
 
@@ -22,17 +24,19 @@ RuleSet: DelegateeAgent
 * role.coding = http://terminology.hl7.org/CodeSystem/v3-RoleCode#DELEGATEE
 * who.reference = "https://api.hip.digital.health.nz/fhir/Patient/NHI789"
 * requestor = true
+* extension[additionalAgentDetails].extension[mha-confidence-level].valueString = "3N"
 * altId = "73a35fec-6d01-4148-832f-f5389f9fd0fa"
 * network.address = "12.21.213.213"
 
 RuleSet: HealthWorkforceAgent
-* role.coding = http://terminology.hl7.org/CodeSystem/v3-RoleCode#PROV
+* role.coding = http://terminology.hl7.org/CodeSystem/v3-RoleClass#PROV
 * who.identifier.system = "https://standards.digital.health.nz/ns/hpi-person-id"
 * who.identifier.value = "cpn-123"
 * altId = "externalSystemId"
 * name = "John Doe"
 * location.display = "Te Whatu Ora, Christchurch Hospital Radiology Department"
 * requestor = true
+* extension[additionalAgentDetails].extension[mha-confidence-level].valueString = "3N"
 * network.address = "12.21.213.213"
 // * extension[healthcareDetails].extension[CPN].valueIdentifier.system = "https://standards.digital.health.nz/ns/hpi-person-id"
 // * extension[healthcareDetails].extension[CPN].valueIdentifier.value = "cpn-123"
@@ -41,14 +45,12 @@ RuleSet: HealthWorkforceAgent
 // * extension[healthcareDetails].extension[FacilityIdentifier].valueIdentifier.system = "https://standards.digital.health.nz/ns/hpi-facility-id"
 // * extension[healthcareDetails].extension[FacilityIdentifier].valueIdentifier.value = "fac-123"
 
-RuleSet: FacilityAgent
-* who.identifier.system = "https://standards.digital.health.nz/ns/hpi-facility-id"
-* who.identifier.value = "fac-123"
-* requestor = false
-
 RuleSet: OrganisationAgent
+* role.coding = http://terminology.hl7.org/CodeSystem/v3-RoleClass#PROV
 * who.identifier.system = "https://standards.digital.health.nz/ns/hpi-organisation-id"
 * who.identifier.value = "org-123"
+* location.identifier.system = "https://standards.digital.health.nz/ns/hpi-facility-id"
+* location.identifier.value = "fac-123"
 * requestor = false
 
 RuleSet: SystemAgent

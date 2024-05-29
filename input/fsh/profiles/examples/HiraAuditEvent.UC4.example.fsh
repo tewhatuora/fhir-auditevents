@@ -15,7 +15,6 @@ Usage: #example
 * agent[healthworkforce] insert HealthWorkforceAgent
 * agent[healthworkforce].policy = "1c7739fb-5099-4db9-a1f9-c928ee059640"
 
-* agent[facility] insert FacilityAgent
 * agent[organisation] insert OrganisationAgent
 
 // agent [sys]
