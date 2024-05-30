@@ -1,6 +1,7 @@
 RuleSet: SlfAgent
 * role.coding = http://terminology.hl7.org/CodeSystem/v3-RoleClass#PAT
-* who.reference = "https://api.hip.digital.health.nz/fhir/Patient/NHI123"
+* who.identifier.system = "https://standards.digital.health.nz/ns/nhi-id"
+* who.identifier.value = "NHI123"
 * requestor = true
 * extension[additionalAgentDetails].extension[mha-confidence-level].valueString = "3N"
 * altId = "56237238-0a38-4ae3-b148-1e6d7a9b9d07"
@@ -8,13 +9,15 @@ RuleSet: SlfAgent
 
 RuleSet: PatientDelegatorAgent
 * role.coding = http://terminology.hl7.org/CodeSystem/v3-RoleCode#DELEGATOR
-* who.reference = "https://api.hip.digital.health.nz/fhir/Patient/NHI123"
+* who.identifier.system = "https://standards.digital.health.nz/ns/nhi-id"
+* who.identifier.value = "NHI123"
 * requestor = false
 * altId = "56237238-0a38-4ae3-b148-1e6d7a9b9d07"
 
 RuleSet: CaregiverAgent
 * role.coding = http://terminology.hl7.org/CodeSystem/v3-RoleClass#CAREGIVER
-* who.reference = "https://api.hip.digital.health.nz/fhir/Patient/NHI456"
+* who.identifier.system = "https://standards.digital.health.nz/ns/nhi-id"
+* who.identifier.value = "NHI456"
 * requestor = true
 * extension[additionalAgentDetails].extension[mha-confidence-level].valueString = "3N"
 * altId = "56237238-0a38-4ae3-b148-1e6d7a9b9d07"
@@ -22,7 +25,8 @@ RuleSet: CaregiverAgent
 
 RuleSet: DelegateeAgent
 * role.coding = http://terminology.hl7.org/CodeSystem/v3-RoleCode#DELEGATEE
-* who.reference = "https://api.hip.digital.health.nz/fhir/Patient/NHI789"
+* who.identifier.system = "https://standards.digital.health.nz/ns/nhi-id"
+* who.identifier.value = "NHI789"
 * requestor = true
 * extension[additionalAgentDetails].extension[mha-confidence-level].valueString = "3N"
 * altId = "73a35fec-6d01-4148-832f-f5389f9fd0fa"
@@ -34,59 +38,41 @@ RuleSet: HealthWorkforceAgent
 * who.identifier.value = "cpn-123"
 * altId = "externalSystemId"
 * name = "John Doe"
-* location.display = "Te Whatu Ora, Christchurch Hospital Radiology Department"
 * requestor = true
-* extension[additionalAgentDetails].extension[mha-confidence-level].valueString = "3N"
 * network.address = "12.21.213.213"
-// * extension[healthcareDetails].extension[CPN].valueIdentifier.system = "https://standards.digital.health.nz/ns/hpi-person-id"
-// * extension[healthcareDetails].extension[CPN].valueIdentifier.value = "cpn-123"
-// * extension[healthcareDetails].extension[OrgIdentifier].valueIdentifier.system = "https://standards.digital.health.nz/ns/hpi-organisation-id"
-// * extension[healthcareDetails].extension[OrgIdentifier].valueIdentifier.value = "org-123"
-// * extension[healthcareDetails].extension[FacilityIdentifier].valueIdentifier.system = "https://standards.digital.health.nz/ns/hpi-facility-id"
-// * extension[healthcareDetails].extension[FacilityIdentifier].valueIdentifier.value = "fac-123"
 
 RuleSet: OrganisationAgent
-* role.coding = http://terminology.hl7.org/CodeSystem/v3-RoleClass#PROV
+* who.display = "Te Whatu Ora"
 * who.identifier.system = "https://standards.digital.health.nz/ns/hpi-organisation-id"
 * who.identifier.value = "org-123"
 * location.identifier.system = "https://standards.digital.health.nz/ns/hpi-facility-id"
 * location.identifier.value = "fac-123"
+* location.display = "Christchurch Hospital Radiology Department"
 * requestor = false
 
 RuleSet: SystemAgent
-* role.coding = http://terminology.hl7.org/CodeSystem/extra-security-role-type#dataprocessor
 * who.display = "client_id123"
 * requestor = false
 * name = "My Health Record"
 * network.address = "88.11.333.213"
 
 RuleSet: DataSubjectAgent(what)
-* what.reference = "{what}"
-* role = https://terminology.hl7.org/CodeSystem/audit-entity-type#1
+* what.identifier.system = "https://standards.digital.health.nz/ns/nhi-id"
+* what.identifier.value = "{what}"
 
 RuleSet: AccessedResourceAgentWithError(what, query, description, error)
-* role = https://terminology.hl7.org/CodeSystem/audit-entity-type#2
 * what.reference = "{what}"
 * query = "{query}"
 * description = "{description}"
 * detail[+].type = "errorBody"
-* detail[=].valueString = "{error}"
+* detail[=].valueBase64Binary = "{error}"
 * detail[+].type = "correlationId"
 * detail[=].valueString = "c500dae6-ac65-4e4f-a4c1-5aa222a6a807"
 
 RuleSet: AccessedResourceAgent(what, query, description)
-* role = https://terminology.hl7.org/CodeSystem/audit-entity-type#2
 * what.reference = "{what}"
 * description = "{description}"
 * query = "{query}"
 * detail[+].type = "correlationId"
 * detail[=].valueString = "c500dae6-ac65-4e4f-a4c1-5aa222a6a807"
-
-RuleSet: AccessedResourceAgentSearch(what, description, body)
-* role = https://terminology.hl7.org/CodeSystem/audit-entity-type#2
-* what.reference = "{what}"
-* description = "{description}"
-* detail[+].type = "searchRequestBody"
-* detail[=].valueString = "{body}"
-* detail[+].type = "correlationId"
-* detail[=].valueString = "c500dae6-ac65-4e4f-a4c1-5aa222a6a807"
+* securityLabel = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#R

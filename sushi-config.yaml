@@ -67,6 +67,7 @@ parameters:
   suppressed-ids: $examples
   display-warnings: true
   excludettl: true
+  excludexml: true
 #   validation: [allow-any-extensions, no-broken-links]
 #
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮

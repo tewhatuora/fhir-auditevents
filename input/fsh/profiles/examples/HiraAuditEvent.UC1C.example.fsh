@@ -1,6 +1,7 @@
 Instance: HiraAuditEventExampleUC1C
 InstanceOf: HiraAuditEvent
-Title: "Example Hira Audit Event for UC1: Member of the public (patient) accesses their own health record (POST Search example)"
+Description: "Example Hira Audit Event for UC1: Member of the public (patient) accesses their own health record (POST Search example)"
+Title: "Example profile instance UC1"
 Usage: #example
 
 * type = http://terminology.hl7.org/CodeSystem/audit-event-type#rest
@@ -18,7 +19,7 @@ Usage: #example
 // agent [sys]
 * agent[system] insert SystemAgent
 
-* source.observer.display = "Hira Mulesoft Gateway"
+* source.observer.display = "HNZ API Gateway"
 
-* entity[accessedResource] insert AccessedResourceAgentSearch(https://fhir.digital.health.nz/fhir/R4/Immunization/_search, Search Immunizations, {\"patient\":\"NHI123\"})
-* entity[dataSubject] insert DataSubjectAgent(https://api.hip.digital.health.nz/fhir/Patient/NHI123)
+* entity[accessedResource] insert AccessedResourceAgent(https://fhir.digital.health.nz/fhir/R4/Immunization/_search, e1wicGF0aWVudFwiOlwiTkhJMTIzXCJ9, Search Immunizations)
+* entity[dataSubject] insert DataSubjectAgent(NHI123)

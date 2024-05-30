@@ -1,6 +1,7 @@
 Instance: HiraAuditEventExampleUC2
 InstanceOf: HiraAuditEvent
-Title: "Example Hira Audit Event for UC2: Member of the public accesses their child’s record"
+Description: "Example Hira Audit Event for UC2: Member of the public accesses their child’s record"
+Title: "Example profile instance UC2"
 Usage: #example
 
 * type = http://terminology.hl7.org/CodeSystem/audit-event-type#rest
@@ -20,7 +21,7 @@ Usage: #example
 // software system
 * agent[system] insert SystemAgent
 
-* source.observer.display = "Hira Mulesoft Gateway"
+* source.observer.display = "HNZ API Gateway"
 
 * entity[accessedResource] insert AccessedResourceAgent(https://fhir.digital.health.nz/fhir/R4/CarePlan, P3BhdGllbnQ9MTIzNA==, Reading CarePlan)
-* entity[dataSubject] insert DataSubjectAgent(https://api.hip.digital.health.nz/fhir/Patient/NHI123)
+* entity[dataSubject] insert DataSubjectAgent(NHI123)

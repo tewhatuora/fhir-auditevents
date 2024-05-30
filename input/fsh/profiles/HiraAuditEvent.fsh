@@ -15,8 +15,10 @@ Description: "Constrains the AuditEvent resource to represent Data Access throug
 * source.observer.display 1..1
 * source.observer.display ^short = "The gateway or entity which logged the event"
 
-* agent ^slicing.discriminator.type = #value
-* agent ^slicing.discriminator.path = "role"
+* agent ^slicing.discriminator[+].type = #value
+* agent ^slicing.discriminator[=].path = "role"
+* agent ^slicing.discriminator[+].type = #value
+* agent ^slicing.discriminator[=].path = "type"
 * agent ^slicing.rules = #open
 
 /* Start Agents - These are the people and systems involed in the data access event */
@@ -27,7 +29,6 @@ Description: "Constrains the AuditEvent resource to represent Data Access throug
   delegatee 0..1 and
   healthworkforce 0..1 and
   system 0..1 and
-  facility 0..1 and
   organisation 0..1
 
 * agent[slf].role = https://terminology.hl7.org/CodeSystem/v3-RoleClass#patient
@@ -57,6 +58,9 @@ Description: "Constrains the AuditEvent resource to represent Data Access throug
 * agent[system].role = http://terminology.hl7.org/CodeSystem/extra-security-role-type#dataprocessor
 * agent[system].role 1..1
 * agent[system].extension contains AgentAdditionalDetailsExtension named additionalAgentDetails 0..1
+
+* agent[organisation].role = http://terminology.hl7.org/CodeSystem/v3-RoleClass#PROV
+* agent[organisation].extension contains AgentAdditionalDetailsExtension named additionalAgentDetails 0..1
 /* End Agents */
 
 * agent[slf] ^short = "The Patient who is logged in and accessing their own records"
@@ -71,19 +75,17 @@ Description: "Constrains the AuditEvent resource to represent Data Access throug
 * entity 1..*
 * entity ^short = "Details of the endpoints being accessed"
 
-* entity ^slicing.discriminator.type = #value
-* entity ^slicing.discriminator.path = "type"
+* entity ^slicing.discriminator[+].type = #value
+* entity ^slicing.discriminator[=].path = "type"
+* entity ^slicing.discriminator[+].type = #value
+* entity ^slicing.discriminator[=].path = "role"
 * entity ^slicing.rules = #open
 
 * entity contains
     accessedResource 1..1 and
     dataSubject 0..*
-
-* entity[accessedResource].role = https://terminology.hl7.org/CodeSystem/audit-entity-type#2
-* entity[accessedResource].role 1..1
+* entity[accessedResource].type = http://terminology.hl7.org/CodeSystem/audit-entity-type#2
 * entity[accessedResource] ^short = "The REST or FHIR resource that is being accessed"
-
-* entity[dataSubject].role = https://terminology.hl7.org/CodeSystem/audit-entity-type#1
-* entity[dataSubject].role 1..1
+* entity[dataSubject].role = http://terminology.hl7.org/CodeSystem/object-role#1
 * entity[dataSubject] ^short = "The data subject of the accessed resource, derived from the resource itself"
 /* End entities */
