@@ -76,3 +76,13 @@ RuleSet: AccessedResourceAgent(what, query, description)
 * detail[+].type = "correlationId"
 * detail[=].valueString = "c500dae6-ac65-4e4f-a4c1-5aa222a6a807"
 * securityLabel = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#R
+
+RuleSet: AccessedResourceAgentSearch(what, body, description, query)
+* what.reference = "{what}"
+* description = "{description}"
+* query = "{body}"
+* detail[+].type = "correlationId"
+* detail[=].valueString = "c500dae6-ac65-4e4f-a4c1-5aa222a6a807"
+* detail[+].type = "fullUrl"
+* detail[=].valueString = "{what}?{query}"
+* securityLabel = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#R

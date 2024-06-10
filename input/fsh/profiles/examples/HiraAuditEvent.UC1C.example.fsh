@@ -21,5 +21,5 @@ Usage: #example
 
 * source.observer.display = "HNZ API Gateway"
 
-* entity[accessedResource] insert AccessedResourceAgent(https://fhir.digital.health.nz/fhir/R4/Immunization/_search, e1wicGF0aWVudFwiOlwiTkhJMTIzXCJ9, Search Immunizations)
+* entity[accessedResource] insert AccessedResourceAgentSearch(https://fhir.digital.health.nz/fhir/R4/Immunization/_search, e1wicGF0aWVudFwiOlwiTkhJMTIzXCJ9, Search Immunizations, admin=true)
 * entity[dataSubject] insert DataSubjectAgent(NHI123)
