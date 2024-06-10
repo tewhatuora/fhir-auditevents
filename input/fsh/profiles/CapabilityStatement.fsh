@@ -17,7 +17,11 @@ Usage: #definition
 * rest.documentation = "Details the FHIR Server API for AuditEvents. This API allows for the creation, retrieval and searching of AuditEvent resources."
 * rest.security.description = "Details security requirements are detailed at [security](./security.html)."
 * rest.security.cors = false
-* rest.security.service[0].coding = http://terminology.hl7.org/CodeSystem/restful-security-service#OAuth
+* rest.security.service = http://terminology.hl7.org/CodeSystem/restful-security-service#SMART-on-FHIR
+* rest.security.extension.url = "http://fhir-registry.smarthealthit.org/StructureDefinition/oauth-uris"
+* rest.security.extension.extension[0].url = "token"
+* rest.security.extension.extension[=].valueUri = "https://ppd.auth.services.health.nz/realms/hnz-integration/protocol/openid-connect/token"
+
 
 * rest.interaction[+].code = #transaction
 * rest.interaction[+].code = #batch
@@ -33,3 +37,7 @@ Usage: #definition
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/AuditEvent-patient"
 * rest.resource[=].searchParam[=].type = #reference
 * rest.resource[=].searchParam[=].documentation = "Allows searching for AuditEvent resources by patient. e.g. [base]/AuditEvent?patient=https://api.hip.digital.health.nz/fhir/Patient/ZXP7823"
+* rest.resource[=].searchParam[1].name = "correlationId"
+* rest.resource[=].searchParam[=].definition = Canonical(AuditEventCorrelationIdSearchParameter)
+* rest.resource[=].searchParam[=].type = #string
+* rest.resource[=].searchParam[=].documentation = "Allows searching for AuditEvent resources by correlationId. e.g. [base]/AuditEvent?correlationId=123456. This is a custom parameter."

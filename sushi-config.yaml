@@ -9,7 +9,7 @@ name: Te Whatu Ora FHIR Audit Events Implementation Guide
 title: Te Whatu Ora FHIR Audit Events Implementation Guide
 description: Te Whatu Ora FHIR Audit Events Implementation Guide
 status: draft
-version: 0.0.1
+version: 0.1.0
 fhirVersion: 4.0.1
 copyrightYear: 2024+
 releaseLabel: draft # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
