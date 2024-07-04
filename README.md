@@ -8,6 +8,8 @@
   </p>
 </div>
 
+[View IG](https://fhir-ig.digital.health.nz/auditevents)
+
 <!-- GETTING STARTED -->
 
 ## Getting Started
