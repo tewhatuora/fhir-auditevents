@@ -6,7 +6,7 @@
 id: tewhatuora.auditevents
 canonical: https://fhir-ig.digital.health.nz/auditevents
 name: Te Whatu Ora FHIR Audit Events Implementation Guide
-title: Te Whatu Ora FHIR Audit Events Implementation Guide
+title: Audit Events Implementation Guide
 description: An Implementation Guide containing profiles and examples of FHIR AuditEvent resource for Te Whatu Ora.
 status: draft
 version: 0.1.0
