@@ -6,8 +6,8 @@
 id: tewhatuora.fhir.auditevents
 canonical: https://build.fhir.org/ig/tewhatuora/fhir-auditevents
 name: Te Whatu Ora FHIR Audit Events Implementation Guide
-title: DEPRECATED - Moved to https://build.fhir.org/ig/tewhatuora/fhir-auditevents
-description: Moved to https://build.fhir.org/ig/tewhatuora/fhir-auditevents
+title: DEPRECATED - Moved to https://fhir-ig.digital.health.nz/auditevents
+description: Moved to https://fhir-ig.digital.health.nz/auditevents
 status: retired
 version: 0.1.0
 fhirVersion: 4.0.1
