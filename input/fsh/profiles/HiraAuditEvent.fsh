@@ -12,6 +12,9 @@ Description: "Constrains the AuditEvent resource to represent Data Access throug
 * outcome 1..1
 * outcomeDesc 1..1
 
+* purposeOfEvent from https://nzhts.digital.health.nz/fhir/ValueSet/nz-purpose-of-use-value-set (extensible)
+* purposeOfEvent ^short = "Purpose of use codes including NZ specific terminology"
+
 * source.observer.display 1..1
 * source.observer.display ^short = "The gateway or entity which logged the event"
 
