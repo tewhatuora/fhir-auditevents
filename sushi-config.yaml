@@ -82,6 +82,7 @@ menu:
   Home: index.html
   Security: security.html
   API: CapabilityStatement-HiraCapabilityStatement.html
+  Verification sample: verification-sample.html
   Artifacts: artifacts.html
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮

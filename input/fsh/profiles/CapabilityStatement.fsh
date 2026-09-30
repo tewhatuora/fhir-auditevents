@@ -41,3 +41,6 @@ Usage: #definition
 * rest.resource[=].searchParam[=].definition = Canonical(AuditEventCorrelationIdSearchParameter)
 * rest.resource[=].searchParam[=].type = #string
 * rest.resource[=].searchParam[=].documentation = "Allows searching for AuditEvent resources by correlationId. e.g. [base]/AuditEvent?correlationId=123456. This is a custom parameter."
+* rest.resource[=].operation[0].name = "verification-sample"
+* rest.resource[=].operation[=].definition = Canonical(VerificationSampleOperation)
+* rest.resource[=].operation[=].documentation = "Returns a deterministic percentage sample of unique clinical accesses for an authorized client and period."
