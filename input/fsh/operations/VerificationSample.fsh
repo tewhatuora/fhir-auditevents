@@ -2,7 +2,7 @@ Instance: VerificationSampleOperation
 InstanceOf: OperationDefinition
 Usage: #definition
 Title: "Verification sample"
-Description: "Deterministic percentage sample of unique clinical accesses for an authorized client and period."
+Description: "Deterministic percentage sample of unique clinical accesses for an authorized client, service base URL and period."
 
 * id = "verification-sample"
 * url = "https://fhir-ig.digital.health.nz/auditevents/OperationDefinition/verification-sample"
@@ -10,7 +10,7 @@ Description: "Deterministic percentage sample of unique clinical accesses for an
 * status = #active
 * kind = #operation
 * code = #verification-sample
-* description = "Deterministic global percentage sample of unique clinical accesses for an authorized client and period."
+* description = "Deterministic global percentage sample of unique clinical accesses for an authorized client, service base URL and period."
 * affectsState = false
 * resource[0] = #AuditEvent
 * system = false
@@ -21,7 +21,13 @@ Description: "Deterministic percentage sample of unique clinical accesses for an
 * parameter[=].min = 1
 * parameter[=].max = "1"
 * parameter[=].type = #string
-* parameter[=].documentation = "Exact source application client identifier."
+* parameter[=].documentation = "Exact source application client identifier; non-blank and at most 256 characters."
+* parameter[+].name = #serviceBaseUrl
+* parameter[=].use = #in
+* parameter[=].min = 1
+* parameter[=].max = "1"
+* parameter[=].type = #uri
+* parameter[=].documentation = "Absolute HTTP(S) service base URL without credentials, query or fragment; at most 256 characters. Matches the exact base or a path below it."
 * parameter[+].name = #startDate
 * parameter[=].use = #in
 * parameter[=].min = 1

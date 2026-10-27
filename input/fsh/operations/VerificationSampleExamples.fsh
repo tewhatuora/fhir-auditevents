@@ -2,9 +2,11 @@ Instance: VerificationSampleRequestExample
 InstanceOf: Parameters
 Usage: #example
 Title: "Verification sample request"
-Description: "Request a two percent sample of one client's August 2026 clinical accesses."
+Description: "Request a two percent sample of one client's August 2026 clinical accesses to one service."
 * parameter[0].name = "clientId"
 * parameter[=].valueString = "example-client"
+* parameter[+].name = "serviceBaseUrl"
+* parameter[=].valueUri = "https://api.example.org/s2s"
 * parameter[+].name = "startDate"
 * parameter[=].valueDateTime = "2026-08-01T00:00:00+12:00"
 * parameter[+].name = "endDate"
@@ -17,6 +19,7 @@ InstanceOf: AuditEvent
 Usage: #example
 Title: "Selected clinical access"
 Description: "One representative AuditEvent for a selected clinician, patient and Auckland date."
+* id = "verification-sample-access-1"
 * type = http://terminology.hl7.org/CodeSystem/audit-event-type#rest
 * action = #R
 * recorded = "2026-08-05T10:15:00+12:00"
@@ -33,6 +36,8 @@ Description: "One representative AuditEvent for a selected clinician, patient an
 * entity[0].what.identifier.system = "https://example.org/patients"
 * entity[=].what.identifier.value = "patient-456"
 * entity[=].role = http://terminology.hl7.org/CodeSystem/object-role#1
+* entity[+].type = http://terminology.hl7.org/CodeSystem/audit-entity-type#2
+* entity[=].what.reference = "https://api.example.org/s2s/Patient/patient-456"
 
 Instance: VerificationSampleResponseExample
 InstanceOf: Bundle

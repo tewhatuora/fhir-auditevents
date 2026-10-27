@@ -13,7 +13,9 @@ curl --location '{token endpoint}' \
   --data-urlencode 'scope=system/AuditEvent.rs'
 ```
 
-The `scope` claim within the provided access_token MUST contain:
+For ordinary resource operations, the `scope` claim MUST contain the scope required by the requested interaction:
 
 - `system/AuditEvent.c` - to permit the `create` operation on an `AuditEvent` resource
 - `system/AuditEvent.rs` - to permit both `read` and `search-type` operation on the `AuditEvent` resource
+
+For `POST [base]/AuditEvent/$verification-sample`, the `scope` claim MUST contain `https://fhir-ig.digital.health.nz/auditevents/OperationDefinition/verification-sample`. This scope authorizes the operation and its returned AuditEvents. A separate `system/AuditEvent.rs` scope is not required. The sampling scope alone does not grant generic AuditEvent read, search or create access. Approved service callers can sample on behalf of source clients; the requested `clientId` need not equal the token client. See [Verification sample](verification-sample.html) for the request and eligibility rules.
